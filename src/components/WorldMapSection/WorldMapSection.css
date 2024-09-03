@@ -1,0 +1,144 @@
+.world-map-section {
+    padding: 100px 5%;
+    background-color: var(--footer-gradient);
+    color: var(--text-color-light);
+    text-align: center;
+    position: relative;
+}
+
+.world-map-section h2 {
+    font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+    margin-bottom: 20px;
+    color: var(--highlight-color-blue);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.world-map-section p {
+    max-width: 1000px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    font-size: clamp(0.9rem, 1.2rem, 1.2rem);
+    color: var(--text-color-muted);
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.world-map {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url('../../assets/img/world_map.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+.map-point {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.map-point .pulse-ring {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -18px;
+    left: -18px;
+    background-color: rgba(55, 44, 183, 0.2);
+    border-radius: 50%;
+    animation: pulse-ring 2s infinite;
+}
+
+.map-point span {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--card-bg-color);
+    color: var(--text-color-light);
+    padding: 5px 10px;
+    border-radius: var(--border-radius-small);
+    font-size: clamp(0.7rem, 0.9rem, 0.9rem);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .world-map {
+        height: 400px;
+    }
+
+    .map-point {
+        width: 12px;
+        height: 12px;
+    }
+
+    .map-point .pulse-ring {
+        width: 40px;
+        height: 40px;
+        top: -15px;
+        left: -15px;
+    }
+
+    .map-point span {
+        top: -30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .world-map-section {
+        padding: 60px 5%;
+    }
+
+    .world-map {
+        height: 300px;
+    }
+
+    .map-point {
+        width: 10px;
+        height: 10px;
+    }
+
+    .map-point .pulse-ring {
+        width: 30px;
+        height: 30px;
+        top: -10px;
+        left: -10px;
+    }
+
+    .map-point span {
+        top: -25px;
+    }
+}

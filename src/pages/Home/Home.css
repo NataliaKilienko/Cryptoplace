@@ -1,0 +1,185 @@
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color-light);
+  text-align: center;
+  background-color: var(--home-bg-color);
+  overflow: hidden;
+  padding: 20px;
+}
+
+.content {
+  z-index: 2;
+  margin-top: 90px;
+  padding: 20px;
+}
+
+.content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: var(--highlight-color-blue);
+  text-shadow: var(--text-shadow-dark);
+  line-height: 1.2;
+}
+
+.content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 700px;
+  color: var(--text-color);
+  margin: 0 auto;
+}
+
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.full-screen-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: var(--image-filter);
+  transform: scale(1.05);
+  transition: transform 1s ease-in-out;
+}
+
+.full-screen-image:hover {
+  transform: scale(1);
+}
+
+.scroll-down {
+  height: 50px;
+  width: 30px;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.scroll-down::before,
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -100%) rotate(45deg);
+  border: 1px solid var(--text-color);
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+
+.scroll-down::before {
+  top: 30%;
+  animation-delay: 0.3s;
+}
+
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    top: 90%;
+    opacity: 0;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .content h1 {
+    font-size: 3.5rem;
+  }
+
+  .content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 992px) {
+  .content h1 {
+    font-size: 3rem;
+  }
+
+  .content p {
+    font-size: 1rem;
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .content h1 {
+    font-size: 2.5rem;
+  }
+
+  .content p {
+    font-size: 0.95rem;
+    max-width: 500px;
+  }
+
+  .scroll-down {
+    height: 40px;
+    width: 24px;
+  }
+
+  .scroll-down::before,
+  .scroll-down::after {
+    height: 8px;
+    width: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .content h1 {
+    font-size: 2rem;
+  }
+
+  .content p {
+    font-size: 0.85rem;
+    max-width: 400px;
+  }
+
+  .scroll-down {
+    height: 35px;
+    width: 20px;
+  }
+
+  .scroll-down::before,
+  .scroll-down::after {
+    height: 6px;
+    width: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 1.8rem;
+  }
+
+  .content p {
+    font-size: 0.8rem;
+    max-width: 350px;
+  }
+}

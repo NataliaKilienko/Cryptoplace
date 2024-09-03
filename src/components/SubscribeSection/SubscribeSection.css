@@ -1,0 +1,113 @@
+.subscribe-section {
+    max-width: 1000px;
+    padding: 60px 5%;
+    background-color: var(--background-color);
+    text-align: center;
+    color: var(--text-color-light);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-large);
+    margin: 30px auto;
+    margin-top: 200px;
+}
+
+.subscribe-section h2 {
+    font-size: clamp(1.8rem, 2.2rem, 2.5rem);
+    margin-bottom: 15px;
+    color: var(--highlight-color-blue);
+    text-shadow: var(--text-shadow-dark);
+}
+
+.subscribe-section p {
+    font-size: clamp(0.9rem, 1.2rem, 1.5rem);
+    color: var(--text-color-muted);
+    margin-bottom: 30px;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.subscribe-input {
+    padding: 15px;
+    font-size: clamp(0.85rem, 1rem, 1.2rem);
+    border: none;
+    border-radius: var(--border-radius-small);
+    background-color: var(--card-bg-color);
+    color: var(--text-color-light);
+    flex: 1;
+    max-width: 400px;
+    box-shadow: var(--box-shadow-small);
+    transition: all 0.3s ease;
+}
+
+.subscribe-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--highlight-color-blue);
+}
+
+.subscribe-input::placeholder {
+    color: var(--text-color-muted);
+}
+
+.subscribe-button {
+    padding: 15px 25px;
+    font-size: clamp(0.85rem, 1rem, 1.2rem);
+    background-color: var(--highlight-color-blue);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    box-shadow: var(--box-shadow-small);
+    transition: all 0.3s ease;
+}
+
+.subscribe-button:hover {
+    background-color: var(--highlight-color-blue-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.telegram-prompt {
+    font-size: clamp(0.85rem, 1rem, 1.2rem);
+    color: var(--text-color-muted);
+}
+
+.telegram-prompt a {
+    color: var(--highlight-color-blue);
+    text-decoration: underline;
+}
+
+.telegram-prompt a:hover {
+    color: var(--highlight-color-blue-hover);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .subscribe-section {
+        padding: 50px 4%;
+        margin-top: 150px;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .subscribe-input {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .subscribe-section {
+        padding: 40px 3%;
+        margin-top: 100px;
+    }
+
+    .subscribe-form {
+        gap: 8px;
+    }
+}

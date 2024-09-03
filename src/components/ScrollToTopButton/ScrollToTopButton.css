@@ -1,0 +1,54 @@
+.scroll-top-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 15px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, var(--primary-color-dark), var(--primary-color));
+    color: var(--text-color-light);
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+    opacity: 0.8;
+    z-index: 1000;
+}
+
+.scroll-top-button:hover {
+    opacity: 1;
+    transform: scale(1.15);
+    background: linear-gradient(135deg, var(--primary-color), var(--highlight-color-blue));
+}
+
+.scroll-top-button svg {
+    font-size: 21px;
+    transition: transform 0.3s ease;
+}
+
+.scroll-top-button:hover svg {
+    transform: rotate(360deg);
+}
+
+@media (max-width: 768px) {
+    .scroll-top-button {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px;
+    }
+
+    .scroll-top-button svg {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-top-button {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px;
+    }
+
+    .scroll-top-button svg {
+        font-size: 16px;
+    }
+}

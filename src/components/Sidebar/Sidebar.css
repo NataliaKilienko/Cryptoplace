@@ -1,0 +1,175 @@
+.sidebar {
+  position: fixed;
+  overflow: hidden;
+  top: 20px;
+  left: 20px;
+  bottom: 30px;
+  width: 64px;
+  border-radius: var(--border-radius);
+  background: var(--sidebar-bg-color);
+  will-change: width;
+  transition: width 0.4s;
+  z-index: 4;
+}
+
+.sidebar.open {
+  width: 260px;
+}
+
+.sidebar:hover:not(.open) {
+  width: 260px;
+}
+
+.inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 260px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding: 0 20px;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.logo-icon {
+  font-size: 24px; 
+  color: var(--text-color-light);
+  margin-right: 12px;
+}
+
+.logo-text {
+  margin-left: 12px;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: translateX(-20px); 
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.sidebar:hover .logo-text,
+.sidebar.open .logo-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu {
+  position: relative;
+  display: grid;
+}
+
+.menu button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 56px;
+  width: 100%;
+  padding: 0 22px;
+  color: var(--text-color-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.menu button.active,
+.menu button:hover {
+  background: var(--menu-button-hover-bg);
+  color: var(--text-color-light);
+}
+
+.menu button span {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sidebar:hover .menu button span,
+.sidebar.open .menu button span {
+  opacity: 1;
+}
+
+.nav-right {
+  margin-top: auto;
+  padding: 20px;
+}
+
+.currency-selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.sidebar:hover .currency-selector,
+.sidebar.open .currency-selector {
+  opacity: 1;
+}
+
+.currency-select {
+  padding: 8px 20px;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--currency-select-border);
+  background: transparent;
+  color: var(--text-color-light);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  outline: none;
+  appearance: none;
+  width: 100px;
+  text-align: center;
+}
+
+.currency-select:hover {
+  border-color: var(--currency-select-hover-border);
+  box-shadow: var(--currency-select-hover-shadow);
+}
+
+.currency-select option {
+  background-color: var(--currency-select-option-bg);
+  color: var(--text-color-light);
+}
+
+.burger-menu {
+  display: none;
+  position: fixed;
+  top: 30px;
+  left: 15px;
+  z-index: 5;
+  background: var(--sidebar-bg-color);
+  border: none;
+  color: var(--text-color-light);
+  font-size: 24px;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.burger-menu:hover {
+  transform: scale(1.1);
+}
+
+
+@media (max-width: 868px) {
+  .sidebar {
+    width: 0;
+    left: -100%;
+    transition: left 0.3s ease, width 0.3s ease;
+  }
+
+  .sidebar.open {
+    left: 0;
+    width: 260px;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+}

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    /* Primary and Secondary Colors */
+    --primary-color: #4a3dff;
+    --primary-color-dark: #372cb7; 
+    --secondary-color: #1a1a3d; 
+
+    /* Background Gradients */
+    --background-gradient: radial-gradient(circle at center, #10101f, #1a1a3d); 
+    --footer-gradient: linear-gradient(180deg, #1a1a2f 0%, #242447 100%); 
+
+    /* Font Families */
+    --font-family: 'Outfit', sans-serif;
+    --secondary-font-family: 'Poppins', sans-serif;
+
+    /* Text Colors */
+    --text-color: #e0e0e0;
+    --text-color-light: #ffffff;
+    --text-color-muted: #b3b3b3;
+
+    /* Background Colors */
+    --background-color: #232742; 
+    --home-bg-color: #0c0b16;
+
+    /* Highlight Colors */
+    --highlight-color-blue: #58a6ff; 
+    --highlight-color-yellow: #ffde91; 
+    --highlight-color-green: #00c07b; 
+    --highlight-color-red: #ff4f4f; 
+
+    /* Text Shadows */
+    --text-shadow-dark: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    --text-shadow-light: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+    /* Image Filters */
+    --image-filter: brightness(60%) contrast(1.1);
+
+    /* Box Shadows */
+    --box-shadow-large: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --box-shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.3);
+    --box-shadow-small: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    /* Border Radii */
+    --border-radius: 20px;
+    --border-radius-small: 15px;
+    --border-radius-smaller: 5px;
+
+    /* Sidebar and Menu */
+    --sidebar-bg-color: #1e1e4e;
+    --menu-button-hover-bg: rgba(69, 0, 198, 0.35);
+
+    /* Currency Select Styles */
+    --currency-select-border: #372cb7; 
+    --currency-select-hover-border: #4a3dff;
+    --currency-select-hover-shadow: 0 0 10px rgba(74, 61, 255, 0.6);
+    --currency-select-option-bg: #1a1a3d;
+
+    /* Card and Info Block Backgrounds */
+    --card-bg-color: #241c4d; 
+    --info-block-bg: #2b2357; 
+    --info-block-hover-bg: #342a6b; 
+
+    /* Chart Background */
+    --chart-bg-color: #18123d; 
+
+    /* Input Text Color */
+    --input-text-color: #333333;
+
+    /* Crypto Card Gradient */
+    --crypto-card-bg-gradient: linear-gradient(135deg, rgba(28, 19, 64, 0.9) 0%, rgba(36, 28, 96, 0.8) 100%);
+
+    /* Positive and Negative Colors */
+    --positive-color: #00c07b;
+    --negative-color: #ff4f4f;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    color: var(--text-color);
+}
+
+html, body {
+    height: 100%;
+    background: var(--background-gradient);
+    line-height: var(--line-height);
+    font-size: var(--font-size-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--background-gradient);
+}
