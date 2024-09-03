@@ -7,7 +7,7 @@ import CoinContextProvider from './context/CoinContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+     <BrowserRouter basename="/cryptoplace"> 
       <CoinContextProvider>
         <App />
       </CoinContextProvider>
