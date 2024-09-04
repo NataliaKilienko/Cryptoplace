@@ -78,12 +78,6 @@ const CoinContextProvider = ({ children }) => {
         }
     }, [favorites, currency.name]);
 
-    // Re-fetch favorite coins when the currency changes
-    useEffect(() => {
-        loadFavorites();
-    }, [currency.name, loadFavorites]);
-
-
     // Function to add a coin to the list of favorites
     const addFavorite = (coinId) => {
         setFavorites(prevFavorites => {
@@ -139,14 +133,6 @@ const CoinContextProvider = ({ children }) => {
             setLoading(false);
         }
     }, [currency.name]);
-
-    // Effect to load coins and news whenever the currency, page, or filter changes
-    useEffect(() => {
-        if (!isSearching) {
-            loadCoins(currentPage);
-            loadNews(filter);
-        }
-    }, [currency, loadCoins, currentPage, isSearching, filter]);
 
     // Context value to provide to the children components
     const contextValue = {

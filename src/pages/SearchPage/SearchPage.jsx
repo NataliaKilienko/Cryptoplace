@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import { CoinContext } from '../../context/CoinContext';
 import gsap from 'gsap';
 import './SearchPage.css';
@@ -35,6 +35,21 @@ const SearchPage = () => {
   const searchTimeoutRef = useRef(null);
   const [showFavorites, setShowFavorites] = useState(false);
 
+  useEffect(() => {
+    if (!isSearching) {
+      loadCoins(currentPage);
+    }
+  }, [currency, sortOrder, currentPage]);
+
+  useEffect(() => {
+    if (isSearching) {
+      searchForCoins(input);
+    }
+    if (showFavorites) {
+      loadFavorites();
+    }
+  }, [currency]);
+
   const inputHandler = (event) => {
     const { value } = event.target;
     setInput(value);
@@ -61,7 +76,6 @@ const SearchPage = () => {
 
   const handleSortChange = (event) => {
     setSortOrder(event.target.value);
-    loadCoins(1);
   };
 
   const handleMouseEffects = (e, index, action) => {
