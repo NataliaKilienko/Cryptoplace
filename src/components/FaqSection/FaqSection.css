@@ -143,5 +143,6 @@
 @media (max-width: 480px) {
     .faq-section {
         padding: 50px 5%;
+        height: 100vh;
     }
 }
